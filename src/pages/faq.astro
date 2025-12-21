@@ -111,7 +111,7 @@ const faqs = [
         </h1>
         <p class="text-xl text-gray-600">
           Everything you need to know about YourApp. Can't find what you're looking for?
-          <a href="/support" class="text-blue-600 hover:text-blue-700 underline">Contact our support team</a>.
+          <a href={`${import.meta.env.BASE_URL}support`} class="text-blue-600 hover:text-blue-700 underline">Contact our support team</a>.
         </p>
       </div>
 
@@ -151,7 +151,7 @@ const faqs = [
           Our support team is here to help you get the most out of YourApp.
         </p>
         <a
-          href="/support"
+          href={`${import.meta.env.BASE_URL}support`}
           class="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
         >
           Contact Support
