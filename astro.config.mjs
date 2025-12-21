@@ -10,7 +10,7 @@ export default defineConfig({
   // Update this with your GitHub Pages URL
   // Format: https://username.github.io (for user/organization pages)
   // Format: https://username.github.io/repository-name (for project pages)
-  site: 'https://furkan-cloud.github.io',
+  site: 'https://futurappsmobile.github.io/webaite',
   
   // GitHub Pages uses static output
   output: 'static',
