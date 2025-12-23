@@ -11,7 +11,7 @@ export default defineConfig({
   // Format: https://username.github.io (for user/organization pages)
   // Format: https://username.github.io/repository-name (for project pages)
   site: 'https://futurappsmobile.github.io',
-  base: '/webaite',
+  base: '/website',
   
   // GitHub Pages uses static output
   output: 'static',
