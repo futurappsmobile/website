@@ -1,11 +1,13 @@
 ---
 const base = import.meta.env.BASE_URL;
+// Ensure base ends with / for proper path construction
+const basePath = base.endsWith('/') ? base : `${base}/`;
 const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Support', href: '/support' },
-  { name: 'Privacy', href: '/privacy' },
-  { name: 'Terms', href: '/terms' },
+  { name: 'Home', href: '' },
+  { name: 'FAQ', href: 'faq' },
+  { name: 'Support', href: 'support' },
+  { name: 'Privacy', href: 'privacy' },
+  { name: 'Terms', href: 'terms' },
 ];
 ---
 
@@ -13,7 +15,7 @@ const navItems = [
   <nav class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <a href={base} class="text-2xl font-bold text-blue-600">
+      <a href={basePath} class="text-2xl font-bold text-blue-600">
         YourApp
       </a>
 
@@ -22,7 +24,7 @@ const navItems = [
         {navItems.map((item) => (
           <li>
             <a
-              href={`${base}${item.href === '/' ? '' : item.href}`}
+              href={`${basePath}${item.href}`}
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
               {item.name}
@@ -49,7 +51,7 @@ const navItems = [
         {navItems.map((item) => (
           <li>
             <a
-              href={`${base}${item.href === '/' ? '' : item.href.slice(1)}`}
+              href={`${basePath}${item.href}`}
               class="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
             >
               {item.name}
