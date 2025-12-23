@@ -3,129 +3,105 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const lastUpdated = 'December 19, 2025';
+const lastUpdated = 'December 24, 2025';
 ---
 
 <Layout
-  title="Privacy Policy - YourApp"
-  description="Privacy Policy for YourApp - Learn how we collect, use, and protect your personal information."
+  title="Privacy Policy - SnapFuel"
+  description="Privacy Policy for SnapFuel - Learn how we collect, use, and protect your personal information."
 >
   <Header />
 
   <main class="py-16 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
-      <p class="text-gray-600 mb-8">Last updated: {lastUpdated}</p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">SnapFuel Privacy Policy</h1>
+      <p class="text-gray-600 mb-8">Effective Date: {lastUpdated}</p>
 
       <div class="prose prose-lg max-w-none">
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
           <p class="text-gray-700 mb-4">
-            Welcome to YourApp. We respect your privacy and are committed to protecting your personal data.
-            This privacy policy will inform you about how we look after your personal data when you use our
-            mobile application and tell you about your privacy rights.
+            SnapFuel ("we," "us," or "our") respects your privacy. This Privacy Policy describes how we collect, use, and share your personal data when you use the SnapFuel mobile application (the "Service"). By using the Service, you agree to the collection and use of information in accordance with this policy.
           </p>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Information We Collect</h2>
-          <p class="text-gray-700 mb-4">We collect and process the following types of information:</p>
-          <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Account Information:</strong> Email address, name, and profile information you provide</li>
-            <li><strong>Health Data:</strong> Weight, calorie intake, water consumption, and other nutrition-related data you input</li>
-            <li><strong>Usage Data:</strong> Information about how you use the app, including meal plans, recipes saved, and features accessed</li>
-            <li><strong>Device Information:</strong> Device type, operating system, and unique device identifiers</li>
-            <li><strong>Recipe and Meal Data:</strong> Custom recipes, meal plans, shopping lists, and notes you create</li>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Data We Collect</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-3 mb-4">
+            <li><strong>Personal Identification:</strong> Name, email address (for account creation).</li>
+            <li><strong>Physical & Health Data:</strong> Weight, height, age, gender, activity level, calorie intake, water consumption, and dietary preferences (e.g., Vegan, Keto).</li>
+            <li><strong>User Content:</strong> Recipes you add manually, notes you take ("Note Raking"), and meal plans you create.</li>
+            <li><strong>Multimedia Data (AI Features):</strong>
+              <ul class="list-disc pl-6 mt-2 space-y-1">
+                <li><strong>Photos:</strong> Images of your fridge, food products, or meals uploaded for AI analysis.</li>
+                <li><strong>Barcodes:</strong> Data scanned via camera to retrieve nutritional information.</li>
+              </ul>
+            </li>
+            <li><strong>Device & Usage Data:</strong> IP address, device model, OS version, and app usage logs (via analytics tools like Google Analytics/Firebase).</li>
           </ul>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">How We Use Your Information</h2>
-          <p class="text-gray-700 mb-4">We use your information to:</p>
-          <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li>Provide and maintain our meal planning and nutrition tracking services</li>
-            <li>Generate personalized AI recipes based on your preferences</li>
-            <li>Analyze your nutrition data and provide insights and recommendations</li>
-            <li>Improve our app features and user experience</li>
-            <li>Send you important updates, notifications, and customer support messages</li>
-            <li>Ensure the security and integrity of our services</li>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">3. How We Use Your Data (Including AI Processing)</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-3 mb-4">
+            <li><strong>To Provide Features:</strong> We process your weight and diet data to calculate daily calorie needs and water intake.</li>
+            <li><strong>AI Analysis (Google Gemini):</strong>
+              <p class="mt-2 mb-2">When you take a photo of your fridge or a product, that image is transmitted to our AI partner (Google Gemini) to identify ingredients and suggest recipes.</p>
+              <p class="mb-2"><strong>Note:</strong> We do not use your private health data to train public AI models, but your inputs are processed by the AI provider to generate responses.</p>
+            </li>
+            <li><strong>Scanning Services:</strong> Barcode data is sent to nutrition databases to retrieve product facts.</li>
+            <li><strong>Monetization:</strong> To manage your Premium subscription status via Apple/Google stores.</li>
           </ul>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Data Storage and Security</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Data Sharing and Third Parties</h2>
           <p class="text-gray-700 mb-4">
-            We implement appropriate technical and organizational measures to protect your personal data against
-            unauthorized access, alteration, disclosure, or destruction. Your data is stored on secure servers
-            with encryption both in transit and at rest.
-          </p>
-          <p class="text-gray-700 mb-4">
-            However, please note that no method of transmission over the internet or electronic storage is 100%
-            secure, and we cannot guarantee absolute security.
-          </p>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Data Sharing</h2>
-          <p class="text-gray-700 mb-4">
-            We do not sell your personal data. We may share your information only in the following circumstances:
+            We do not sell your personal data. We share data only with necessary service providers:
           </p>
           <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Service Providers:</strong> With trusted third-party service providers who help us operate our app (e.g., cloud hosting, analytics)</li>
-            <li><strong>Legal Requirements:</strong> When required by law or to protect our legal rights</li>
-            <li><strong>With Your Consent:</strong> When you explicitly agree to share your data</li>
+            <li><strong>AI Service Provider:</strong> Google (Gemini API) – for image recognition and text generation.</li>
+            <li><strong>Cloud Storage:</strong> (e.g., AWS, Firebase) – to store your user profile and notes securely.</li>
+            <li><strong>Analytics:</strong> Google Analytics / Firebase – to understand how the app is used.</li>
+            <li><strong>Payment Processors:</strong> Apple App Store and Google Play Store handle all financial transactions. SnapFuel does not see or store your credit card details.</li>
           </ul>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Your Privacy Rights</h2>
-          <p class="text-gray-700 mb-4">You have the right to:</p>
-          <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Access:</strong> Request access to your personal data</li>
-            <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
-            <li><strong>Deletion:</strong> Request deletion of your personal data</li>
-            <li><strong>Data Portability:</strong> Request a copy of your data in a structured, machine-readable format</li>
-            <li><strong>Withdraw Consent:</strong> Withdraw your consent to data processing at any time</li>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">5. International Data Transfers</h2>
+          <p class="text-gray-700 mb-4">
+            SnapFuel operates globally. Your information, including Personal Data, may be transferred to—and maintained on—computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ (e.g., servers in the USA). By using SnapFuel, you consent to this transfer.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Your Rights (GDPR & CCPA)</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-3 mb-4">
+            <li><strong>For Users in Europe (GDPR):</strong> You have the right to access, rectify, download, or erase your data. You also have the right to restrict processing. To exercise these rights, contact us at <a href="mailto:futurappsmobile@gmail.com" class="text-blue-600 hover:text-blue-700 underline">futurappsmobile@gmail.com</a>.</li>
+            <li><strong>For Users in California (CCPA):</strong> You have the right to know what personal information is collected and to request deletion of your data.</li>
+            <li><strong>Account Deletion:</strong> You can request the deletion of your account and all associated data directly within the App settings.</li>
           </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Data Retention</h2>
           <p class="text-gray-700 mb-4">
-            To exercise these rights, please contact us through the app or at the contact information provided below.
+            We retain your personal data only as long as is necessary for the purposes set out in this Privacy Policy or as required by law.
           </p>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Children's Privacy</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Children's Privacy</h2>
           <p class="text-gray-700 mb-4">
-            Our app is not intended for children under the age of 13. We do not knowingly collect personal
-            information from children under 13. If you believe we have collected information from a child under
-            13, please contact us immediately.
+            SnapFuel is not intended for use by children under the age of 13 (or 16 in certain jurisdictions like the EU). We do not knowingly collect data from minors.
           </p>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Cookies and Tracking</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Contact Us</h2>
           <p class="text-gray-700 mb-4">
-            Our app may use cookies and similar tracking technologies to improve user experience and analyze
-            app usage. You can control cookie preferences through your device settings.
+            For privacy concerns: <a href="mailto:futurappsmobile@gmail.com" class="text-blue-600 hover:text-blue-700 underline">futurappsmobile@gmail.com</a>
           </p>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Changes to This Privacy Policy</h2>
-          <p class="text-gray-700 mb-4">
-            We may update this privacy policy from time to time. We will notify you of any changes by posting
-            the new privacy policy on this page and updating the "Last updated" date.
-          </p>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
-          <p class="text-gray-700 mb-4">
-            If you have any questions about this privacy policy or our data practices, please contact us:
-          </p>
-          <ul class="list-none text-gray-700 space-y-2">
-            <li><strong>Email:</strong> <a href="mailto:futurappsmobile@gmail.com" class="text-blue-600 hover:text-blue-700 underline">futurappsmobile@gmail.com</a></li>
-            <li><strong>Support:</strong> <a href="mailto:futurappsmobile@gmail.com" class="text-blue-600 hover:text-blue-700 underline">futurappsmobile@gmail.com</a></li>
-          </ul>
         </section>
       </div>
     </div>
