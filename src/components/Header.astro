@@ -22,7 +22,7 @@ const navItems = [
         {navItems.map((item) => (
           <li>
             <a
-              href={`${base}${item.href === '/' ? '' : item.href.slice(1)}`}
+              href={`${base}${item.href === '/' ? '' : item.href}`}
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
               {item.name}
