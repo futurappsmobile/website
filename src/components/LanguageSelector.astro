@@ -1,0 +1,81 @@
+---
+import { supportedLanguages } from "../i18n/languages";
+
+interface Props {
+    currentLang: string;
+}
+
+const { currentLang } = Astro.props;
+const currentUrl = Astro.url.pathname;
+
+// Function to get the target URL for a language switch
+const getTargetUrl = (targetLang: string) => {
+    // If we are at root /, redirect to /targetLang/
+    if (currentUrl === "/" || currentUrl === "/website/") {
+        return `/website/${targetLang}/`;
+    }
+
+    // Split path segments
+    const segments = currentUrl.split("/").filter(Boolean);
+
+    // Assuming path structure is /website/[lang]/page or /website/page
+    // Check if the second segment (after website) is a supported language code
+    // Note: Astro baseUrl is /website/
+
+    // remove 'website' if present to handle easier
+    const pathWithoutBase = currentUrl.replace("/website", "");
+    const pathSegments = pathWithoutBase.split("/").filter(Boolean);
+
+    if (
+        pathSegments.length > 0 &&
+        supportedLanguages.some((l) => l.code === pathSegments[0])
+    ) {
+        // replace existing lang code
+        pathSegments[0] = targetLang;
+    } else {
+        // prepend lang code
+        pathSegments.unshift(targetLang);
+    }
+
+    return `/website/${pathSegments.join("/")}`;
+};
+---
+
+<div class="relative group z-50">
+    <button
+        class="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
+    >
+        <span class="uppercase font-semibold">{currentLang}</span>
+        <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+
+    <div
+        class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 max-h-96 overflow-y-auto"
+    >
+        {
+            supportedLanguages.map((lang) => (
+                <a
+                    href={getTargetUrl(lang.code)}
+                    class={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${
+                        currentLang === lang.code
+                            ? "bg-blue-50 text-blue-600 font-semibold"
+                            : ""
+                    }`}
+                >
+                    {lang.name}
+                </a>
+            ))
+        }
+    </div>
+</div>

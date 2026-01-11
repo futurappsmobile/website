@@ -1,16 +1,24 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
   description?: string;
+  lang?: string;
 }
 
-const { title, description = 'Your AI-powered meal planning and nutrition tracking companion' } = Astro.props;
+const {
+  title,
+  description = "Your AI-powered meal planning and nutrition tracking companion",
+  lang = "en",
+} = Astro.props;
+
+const rtlLanguages = ["ar", "he", "ur", "fa"];
+const direction = rtlLanguages.includes(lang) ? "rtl" : "ltr";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang={lang} dir={direction}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
