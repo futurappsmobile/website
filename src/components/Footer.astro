@@ -1,5 +1,5 @@
 ---
-import { getLegalContent } from "../i18n/utils";
+import { getLegalContent, getAppStoreLink } from "../i18n/utils";
 
 interface Props {
   currentLang?: string;
@@ -79,7 +79,7 @@ const getLink = (path: string) => {
         <h3 class="text-lg font-bold mb-4">{footer.download}</h3>
         <div class="flex flex-col space-y-3">
           <a
-            href="#"
+            href={getAppStoreLink(currentLang)}
             class="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors"
           >
             <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">

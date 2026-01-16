@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { supportedLanguages } from "../i18n/languages";
 
 interface Props {
   title: string;
@@ -28,16 +29,71 @@ const direction = rtlLanguages.includes(lang) ? "rtl" : "ltr";
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+
+    <!-- Hreflang Tags -->
+    {
+      supportedLanguages.map((l) => (
+        <link
+          rel="alternate"
+          hreflang={l.code}
+          href={
+            new URL(
+              `/${l.code}${Astro.url.pathname.replace(/^\/[a-z]{2}/, "")}`,
+              Astro.site,
+            )
+          }
+        />
+      ))
+    }
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={new URL("/app-screens/daily-overview.png", Astro.site)}
+    />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content={new URL("/app-screens/daily-overview.png", Astro.site)}
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "SnapFuel",
+        applicationCategory: "HealthApplication",
+        operatingSystem: "iOS, Android",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+        description: description,
+        image: new URL(
+          "/app-screens/daily-overview.png",
+          Astro.site,
+        ).toString(),
+        softwareHelp: new URL("/support", Astro.site).toString(),
+        author: {
+          "@type": "Organization",
+          name: "FuturApps",
+          url: "https://futurappsmobile.github.io/website",
+        },
+      })}
+    />
   </head>
   <body class="min-h-screen bg-gray-50">
     <slot />

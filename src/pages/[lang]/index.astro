@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { supportedLanguages } from "../../i18n/languages";
-import { getLegalContent } from "../../i18n/utils";
+import { getLegalContent, getAppStoreLink } from "../../i18n/utils";
 
 export async function getStaticPaths() {
     return supportedLanguages.map((lang) => ({
@@ -21,7 +21,7 @@ const basePath = import.meta.env.BASE_URL.endsWith("/")
     ? import.meta.env.BASE_URL
     : `${import.meta.env.BASE_URL}/`;
 
-const getAppStoreLink = "#"; // Replace with actual link
+// const getAppStoreLink = "#"; // Replace with actual link
 const getPlayStoreLink = "#"; // Replace with actual link
 ---
 
@@ -95,7 +95,7 @@ const getPlayStoreLink = "#"; // Replace with actual link
                         class="flex flex-col sm:flex-row gap-5 justify-center pt-8 animate-fade-in-up animation-delay-400"
                     >
                         <a
-                            href={getAppStoreLink}
+                            href={getAppStoreLink(lang)}
                             class="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 rounded-2xl font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
                         >
                             <svg
@@ -449,7 +449,7 @@ const getPlayStoreLink = "#"; // Replace with actual link
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                        href={getAppStoreLink}
+                        href={getAppStoreLink(lang)}
                         class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105 transform"
                     >
                         <svg
